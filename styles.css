@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: hsl(217, 54%, 11%);
+    --card-color: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+    --accent-color: hsl(178, 100%, 50%);
+    --text-color: hsl(215, 51%, 70%);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card-wrapper {
+    background-color: var(--card-color);
+    width: 350px;
+    height: 600px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgb(13, 12, 26);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* an outer wrapper is needed to contain both the image and the overlay so that overlay is a child of "outer" and can be displayed when "outer" is hovered over */
+.outer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 25px;
+}
+
+#main-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* overlay visual is hidden when cursor not hovering over the outer wrapper */
+.overlay {
+    position: absolute;
+    top: 0;
+    height: 300px;
+    width: 300px;
+    background-color: hsla(178, 100%, 50%, 0.35);
+    border-radius: 10px;
+    display: none;
+}
+
+#view-img {
+    margin-left: 150px;
+    margin-top: 150px;
+    transform: translate(-50%, -50%);
+}
+
+/* this means that when you hover over outer, change its overlay child's display to block (cannot hover over overlay if display is hidden!) */
+.outer:hover .overlay {
+    cursor: pointer;
+    display: block;
+}
+
+.body-text-wrapper {
+    margin-left: 25px;
+    width: 300px;
+}
+
+.body-text-wrapper h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.body-text-wrapper h1:hover {
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+.body-text-wrapper h2 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eth-container {
+    display: flex;
+    height: 20px;
+}
+
+#eth-img {
+    height: 1em;
+    margin: 2px 0.4em 0 0;
+}
+
+#eth-txt {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.day-container {
+    display: flex;
+}
+
+#clock-img {
+    height: 1em;
+    margin: 2px 0.4em 0 0;
+}
+
+#day-text {
+    margin: 0;
+}
+
+hr {
+    width: 300px;
+    border-color: var(--line-color);
+    margin: 18px auto;
+}
+
+.footer-wrapper {
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    left: 25px;
+    display: flex;
+}
+
+#avatar-img {
+    height: 2em;
+    margin-right: 1em;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+#avatar-text {
+    margin: auto 0;
+}
+
+.name {
+    color: white;
+}
+
+.name:hover {
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
